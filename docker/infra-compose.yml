@@ -1,0 +1,24 @@
+# ============================================================
+# Infraestructura - RCASANI MATRÍCULA
+# ============================================================
+#
+# Crear la red una sola vez:
+# docker network create ms-network-matricula
+#
+# Levantar infraestructura:
+# docker compose --file docker/infra-compose.yml up -d
+#
+# Ver contenedores:
+# docker ps
+#
+# Ver logs de Oracle:
+# docker logs oracle-alumno-v1
+# ============================================================
+
+services:
+
+volumes:
+
+networks:
+  ms-network-matricula:
+    external: true
