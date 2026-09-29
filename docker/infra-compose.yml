@@ -14,10 +14,30 @@
 # Ver logs de Oracle:
 # docker logs oracle-alumno-v1
 # ============================================================
+name: rcasani-matricula
 
 services:
 
+  oracle-alumno-v1:
+
+    image: gvenzl/oracle-xe:21-slim
+    container_name: oracle-alumno-v1
+    restart: always
+
+    environment:
+      ORACLE_PASSWORD: plsapito
+
+    ports:
+      - "40071:1521"
+
+    volumes:
+      - oracle-alumno-v1-db-data:/opt/oracle/oradata
+
+    networks:
+      - ms-network-matricula
+
 volumes:
+  oracle-alumno-v1-db-data:
 
 networks:
   ms-network-matricula:
